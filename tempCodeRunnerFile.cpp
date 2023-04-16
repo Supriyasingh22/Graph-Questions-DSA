@@ -1,6 +1,8 @@
+g.topologicalSort(topo,inDegree,result);
 
-    cout<<"enter the no. of edges : ";
-    cin>>m ;
-    graph g ;
+    // //printing in topological sort order 
 
-    for(int i = 0 ;i<m;i++)
+    // for(int i = 0 ;i<v;i++)
+    // {
+    //     cout<<result[i]<<" ";
+    // }
