@@ -68,6 +68,8 @@ class graph{
                 return true ;
             }
         }
+        
+        inRec[u]=false;
         return false ;
     }
     
