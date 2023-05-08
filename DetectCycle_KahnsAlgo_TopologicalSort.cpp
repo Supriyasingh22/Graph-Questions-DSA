@@ -1,3 +1,4 @@
+// To Detect Cycle in a graph using Topological sort as Topological sort works only on DAG(Directed Acyclic Graph ) 
 
 #include<iostream>
 #include<unordered_map>
@@ -17,6 +18,7 @@ class Graph{
         this->v = v ;
     }
 
+//     Graph creation from matrix 
     void CreateGraph(vector<vector<int>>edges)
     {
         for(int i = 0 ;i<v;i++)
@@ -30,7 +32,7 @@ class Graph{
             }
         }
     }
-
+// Printing Graph 
     void printGraph()
     {
         for(auto i : adjL)
@@ -44,12 +46,15 @@ class Graph{
         }
     }
 
+//     for Cycle Detection 
     bool isCycle(vector<bool>&visited)
     {
         queue<int>que ;
-        vector<int>inDegree(v,0);
+        vector<int>inDegree(v,0); //to keep count of indegree of a node 
         int count = 0 ;
 
+        
+//         Counting each indegree 
         for(int i = 0 ;i<v;i++)
         {
             for(auto j : adjL[i])
@@ -57,6 +62,8 @@ class Graph{
                 inDegree[j]++;
             }
         }
+        
+//         the Node having 0 indegree is pushed into queue 
 
         for(int i = 0 ;i<v;i++)
         {
@@ -68,6 +75,7 @@ class Graph{
             }
         }
 
+//         while queue is not empty we will keep traversing to it's child and decreasing their indegree 
         while(!que.empty())
         {
             int node = que.front();
@@ -85,11 +93,12 @@ class Graph{
             }
         }
 
-        if(count==v)
+
+        if(count==v)//if count is equal to v that means no cycle is there 
         {
             return false ;
         }
-        else
+        else //id count is not equal to v that means not all node are pushed to the queue
         {
             return true ;
         }
