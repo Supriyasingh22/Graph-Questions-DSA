@@ -1,4 +1,4 @@
-// to detect cycle in an undirected graph using BFS 
+// To detect cycle in an undirected graph using BFS 
 
 #include<iostream>
 #include<unordered_map>
@@ -15,10 +15,10 @@ class Graph{
     public : 
     Graph(int v)
     {
-        this->v = v ;
+        this->v = v ;//set the vertices 
     }
 
-    void CreateGraph(vector<vector<int>>edges)
+    void CreateGraph(vector<vector<int>>edges) //here created graph using relation between edegd in thr form of matrix 
     {
         for(int i = 0 ;i<v;i++)
         {
@@ -32,12 +32,12 @@ class Graph{
         }
     }
 
-    void printGraph()
+    void printGraph() //print graph 
     {
-        for(auto i : adjL)
+        for(auto i : adjL) // this "i" will take all first and second content
         {
-            cout<<i.first;
-            for(auto v : adjL[i.first])
+            cout<<i.first; 
+            for(auto v : adjL[i.first])//will access all the element of node 
             {
                 cout<<"->"<<v ;
             }
@@ -45,7 +45,7 @@ class Graph{
         }
     }
 
-    bool isCycleBFS(int u ,vector<bool>&visited, vector<bool>&inRec)
+    bool isCycleBFS(int u ,vector<bool>&visited, vector<bool>&inRec)//deteting cycle in BFS 
     {
         queue<int>q ;
         visited[u]=true ;
@@ -81,7 +81,7 @@ class Graph{
         }
          for(int i = 0 ;i<v;i++)
          {
-            inRec[i]=false ;
+            inRec[i]=false ;  
          }
         return false ;
 
