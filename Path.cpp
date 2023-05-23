@@ -102,7 +102,7 @@ int main()
 
     // to find if path exists between two nodes or not 
     int s ,d ;
-    cout<<"two find if path exists enter two nodes ";
+    cout<<"To find if path exists enter two nodes ";
     cin>>s>>d ;
 
     int r = g.checkPath(s,d,visited) ;
