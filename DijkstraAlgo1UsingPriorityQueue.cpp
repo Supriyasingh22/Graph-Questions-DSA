@@ -20,7 +20,7 @@ class Graph{
         result = vector<int>(v,INT_MAX);
     }
      
-
+// To make adjacency list from Distance matrix 
     void adjacencyList(vector<vector<int>>Distance)
     {
         for(int i = 0 ;i<v;i++)
@@ -36,6 +36,7 @@ class Graph{
     }
     }
 
+//     To find shortest Path 
     void ShortestPath(int S)
     {
 
